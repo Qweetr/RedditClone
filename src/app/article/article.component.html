@@ -2,16 +2,23 @@
   <div class="row">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{ value }}</h5>
-        <h5 class="card-title">Points</h5>
+        <h5 class="card-title">{{ article.votes }}</h5>
+        <h5 class="card-title">Votes</h5>
       </div>
     </div>
     <div class="col-9">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-body">{{ title }}</h5>
-          <a class="btn btn-success btn-sm float-left">Vote Up</a>
-          <a class="btn btn-warning btn-sm float-left">Vote Down</a>
+          <h5 class="card-body">{{ article.title }}</h5>
+          <h5 class="card-body">
+            <a href="{{ article.link }}">{{ article.link }}</a>
+          </h5>
+          <a class="btn btn-success btn-sm float-left" (click)="voteUp()"
+            >Vote Up</a
+          >
+          <a class="btn btn-warning btn-sm float-right" (click)="voteDown()"
+            >Vote Down</a
+          >
         </div>
       </div>
     </div>
